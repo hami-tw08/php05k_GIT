@@ -14,10 +14,10 @@ function db_conn(){
         $db_host = "localhost";
         }
         else{
-            $db_name = "***";
-            $db_id   = "***";
-            $db_pw   = "***";
-            $db_host = "***";
+            $db_name = "hanami979_gs_db";
+            $db_id   = "hanami979_gs_db";
+            $db_pw   = "yh511511u_";
+            $db_host = "mysql3108.db.sakura.ne.jp";
         }
         return new PDO('mysql:dbname='.$db_name.';charset=utf8;host=' .$db_host, $db_id, $db_pw);
 
@@ -29,6 +29,7 @@ function db_conn(){
 //SQLエラー
 function sql_error($stmt){
     $error = $stmt->errorInfo();
+    echo "SQL Error: " . print_r($error, true);
     exit();
 }
 
